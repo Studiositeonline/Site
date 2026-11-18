@@ -1,0 +1,1499 @@
+ 
+
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="theme-color" content="#f8dce8"> 
+<title>Альбина — веб-дизайнер</title> 
+
+ 
+
+<style> 
+:root { 
+  --pink: #f4bfd5; 
+  --pink2: #e88db4; 
+  --hot: #d94f8d; 
+  --pale: #fff5fa; 
+  --ink: #171217; 
+  --muted: #775d6a; 
+  --line: #efc5d8; 
+} 
+
+ 
+
+* { 
+  box-sizing: border-box; 
+} 
+
+ 
+
+html { 
+  scroll-behavior: smooth; 
+} 
+
+ 
+
+body { 
+  margin: 0; 
+  background: var(--pale); 
+  color: var(--ink); 
+  font-family: Arial, Helvetica, sans-serif; 
+  overflow-x: hidden; 
+} 
+
+ 
+
+/* Фон */ 
+
+ 
+
+body:before { 
+  content: ""; 
+  position: fixed; 
+  inset: 0; 
+  pointer-events: none; 
+  opacity: .24; 
+  z-index: -1; 
+  background: 
+    radial-gradient(circle at 12% 15%, #f6c4d9 0 2px, transparent 3px), 
+    radial-gradient(circle at 85% 68%, #f6c4d9 0 2px, transparent 3px); 
+
+
+  background-size: 80px 80px; 
+} 
+
+ 
+
+/* Шапка */ 
+
+ 
+
+header { 
+  position: sticky; 
+  top: 0; 
+  z-index: 20; 
+  background: rgba(255,245,250,.91); 
+  backdrop-filter: blur(14px); 
+  border-bottom: 1px solid var(--line); 
+  padding: 14px clamp(16px,5vw,64px); 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 14px; 
+} 
+
+ 
+
+.brand { 
+  font-family: Georgia, serif; 
+  font-weight: bold; 
+  letter-spacing: .08em; 
+  font-size: clamp(19px,3vw,27px); 
+  color: #b93670; 
+} 
+
+ 
+
+.brand span { 
+  color: var(--ink); 
+} 
+
+ 
+
+nav { 
+  display: flex; 
+  gap: 7px; 
+  flex-wrap: wrap; 
+  justify-content: flex-end; 
+} 
+
+ 
+
+nav button { 
+  border: 1px solid transparent; 
+  background: transparent; 
+  color: var(--ink); 
+  font-weight: 700; 
+  padding: 11px 15px; 
+  border-radius: 30px; 
+  cursor: pointer; 
+  font-size: 14px; 
+  transition: .2s; 
+
+
+} 
+
+ 
+
+nav button:hover, 
+nav button.active { 
+  background: #f7d7e5; 
+  border-color: #efb5cf; 
+  color: #a52d62; 
+} 
+
+ 
+
+/* Страницы */ 
+
+ 
+
+main { 
+  max-width: 1120px; 
+  margin: auto; 
+  padding: clamp(28px,6vw,70px) 
+           clamp(18px,5vw,55px) 80px; 
+} 
+
+ 
+
+.page { 
+  display: none; 
+  animation: fade .45s ease; 
+} 
+
+ 
+
+.page.active { 
+  display: block; 
+} 
+
+ 
+
+@keyframes fade { 
+  from { 
+    opacity: 0; 
+    transform: translateY(12px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: none; 
+  } 
+} 
+
+ 
+
+.eyebrow { 
+  text-transform: uppercase; 
+  letter-spacing: .25em; 
+  color: #c34a7d; 
+  font-weight: 800; 
+  font-size: 12px; 
+  margin: 0 0 18px; 
+} 
+
+ 
+
+h1, h2 { 
+
+
+  font-family: Georgia, 'Times New Roman', serif; 
+  line-height: 1.02; 
+  margin: 0 0 18px; 
+} 
+
+ 
+
+h1 { 
+  font-size: clamp(54px,10vw,112px); 
+  letter-spacing: -.045em; 
+} 
+
+ 
+
+h2 { 
+  font-size: clamp(42px,7vw,72px); 
+  color: #b93670; 
+} 
+
+ 
+
+.lead { 
+  font-size: clamp(17px,2.4vw,22px); 
+  line-height: 1.65; 
+  color: var(--muted); 
+  max-width: 690px; 
+} 
+
+ 
+
+/* Страница 1 — Я */ 
+
+ 
+
+.hero { 
+  display: grid; 
+  grid-template-columns: 1.05fr .95fr; 
+  gap: 42px; 
+  align-items: center; 
+  min-height: 65vh; 
+} 
+
+ 
+
+.hero-copy { 
+  position: relative; 
+  z-index: 1; 
+} 
+
+ 
+
+.hero h1 em { 
+  font-style: normal; 
+  color: var(--hot); 
+} 
+
+ 
+
+.hero-photo { 
+  position: relative; 
+  max-width: 420px; 
+  justify-self: center; 
+  width: 100%; 
+} 
+
+
+ 
+
+.hero-photo:before { 
+  content: ""; 
+  position: absolute; 
+  inset: 5% -5% -4% 5%; 
+  border: 2px solid var(--pink2); 
+  border-radius: 48% 48% 35% 35%; 
+  transform: rotate(5deg); 
+} 
+
+ 
+
+.hero-photo img { 
+  position: relative; 
+  width: 100%; 
+  height: min(66vh,570px); 
+  object-fit: cover; 
+  object-position: center 35%; 
+  border-radius: 48% 48% 35% 35%; 
+  border: 9px solid white; 
+  box-shadow: 0 18px 55px #d78eae55; 
+} 
+
+ 
+
+.signature { 
+  font-family: Georgia, serif; 
+  font-size: 21px; 
+  color: #a83269; 
+  margin-top: 24px; 
+} 
+
+ 
+
+/* Заголовки разделов */ 
+
+ 
+
+.section-head { 
+  text-align: center; 
+  margin-bottom: 38px; 
+} 
+
+ 
+
+.section-head .lead { 
+  margin: 0 auto; 
+} 
+
+ 
+
+/* Страница 2 — Мои работы */ 
+
+ 
+
+.gallery { 
+  display: grid; 
+  grid-template-columns: repeat(4,minmax(0,1fr)); 
+  gap: 17px; 
+} 
+
+ 
+
+.work-card { 
+
+
+  background: white; 
+  border: 1px solid var(--line); 
+  padding: 10px; 
+  border-radius: 19px; 
+  box-shadow: 0 10px 30px #b74c7810; 
+  overflow: hidden; 
+} 
+
+ 
+
+.work-card img { 
+  width: 100%; 
+  height: 245px; 
+  object-fit: cover; 
+  object-position: top; 
+  border-radius: 12px; 
+  display: block; 
+  transition: transform .35s; 
+} 
+
+ 
+
+.work-card:hover img { 
+  transform: scale(1.035); 
+} 
+
+ 
+
+.work-caption { 
+  text-align: center; 
+  padding: 13px 5px 7px; 
+  font-weight: 800; 
+  color: #a83269; 
+  letter-spacing: .03em; 
+} 
+
+ 
+
+.group-title { 
+  font: bold 24px Georgia, serif; 
+  color: #29202a; 
+  margin: 35px 0 16px; 
+} 
+
+ 
+
+/* Страница 3 — Стоимость */ 
+
+ 
+
+.price-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 22px; 
+  max-width: 900px; 
+  margin: 0 auto; 
+} 
+
+ 
+
+/* Карточка-блокнот */ 
+
+ 
+
+
+.note { 
+  position: relative; 
+  background: #fffdfd; 
+  border: 1px solid #edc5d8; 
+  border-radius: 8px 20px 20px 8px; 
+  padding: 34px 28px 30px 52px; 
+  box-shadow: 
+    7px 9px 0 #f0c6d8, 
+    0 16px 35px #b74c7814; 
+  min-height: 245px; 
+  background-image: repeating-linear-gradient( 
+    to bottom, 
+    transparent 0 42px, 
+    #f3d9e4 43px, 
+    #f3d9e4 44px 
+  ); 
+} 
+
+ 
+
+.note:before { 
+  content: ""; 
+  position: absolute; 
+  left: 25px; 
+  top: 0; 
+  bottom: 0; 
+  border-left: 2px solid #f0a8c5; 
+} 
+
+ 
+
+.note:after { 
+  content: ""; 
+  position: absolute; 
+  left: 10px; 
+  top: 28px; 
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%; 
+  background: #f2c4d8; 
+  box-shadow: 
+    0 42px #f2c4d8, 
+    0 84px #f2c4d8, 
+    0 126px #f2c4d8, 
+    0 168px #f2c4d8; 
+} 
+
+ 
+
+.note h3 { 
+  font: bold 25px Georgia, serif; 
+  margin: 0 0 20px; 
+  color: #b93670; 
+} 
+
+
+ 
+
+.note p { 
+  font-size: 17px; 
+  line-height: 1.55; 
+  margin: 0 0 13px; 
+  color: #342832; 
+} 
+
+ 
+
+.note strong { 
+  color: #b93670; 
+} 
+
+ 
+
+/* Страница 4 — Заказать */ 
+
+ 
+
+.contact-wrap { 
+  max-width: 760px; 
+  margin: 20px auto 0; 
+  text-align: center; 
+} 
+
+ 
+
+.contact-card { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 14px; 
+  margin: 16px 0; 
+  padding: 20px 22px; 
+  background: white; 
+  border: 2px solid var(--pink2); 
+  border-radius: 18px; 
+  box-shadow: 0 9px 0 #f4d7e4; 
+} 
+
+ 
+
+.contact-label { 
+  font-size: 12px; 
+  letter-spacing: .18em; 
+  text-transform: uppercase; 
+  color: #bd4b7c; 
+  font-weight: 800; 
+  text-align: left; 
+} 
+
+ 
+
+.contact-value { 
+  font-size: clamp(16px,3vw,21px); 
+  font-weight: 700; 
+  overflow-wrap: anywhere; 
+} 
+
+ 
+
+
+.contact-card a { 
+  color: var(--ink); 
+  text-decoration: none; 
+} 
+
+ 
+
+.contact-card a:hover { 
+  color: #bd3973; 
+} 
+
+ 
+
+.copy-hint { 
+  color: var(--muted); 
+  font-size: 14px; 
+  margin-top: 22px; 
+} 
+
+ 
+
+/* Подвал */ 
+
+ 
+
+footer { 
+  text-align: center; 
+  padding: 24px 16px; 
+  color: #916d7c; 
+  border-top: 1px solid var(--line); 
+  font-size: 13px; 
+} 
+
+ 
+
+/* Анимированные стикеры Hello Kitty */ 
+
+ 
+
+.cat-sticker { 
+  position: fixed; 
+  z-index: 5; 
+  pointer-events: none; 
+  width: 68px; 
+  height: 68px; 
+  animation: float 4.2s ease-in-out infinite; 
+  filter: drop-shadow(0 7px 7px #b44c7830); 
+} 
+
+ 
+
+.cat-sticker.one { 
+  left: 2vw; 
+  top: 23vh; 
+} 
+
+ 
+
+.cat-sticker.two { 
+  right: 3vw; 
+  top: 63vh; 
+  animation-delay: -1.6s; 
+  transform: scale(.82); 
+} 
+
+
+ 
+
+.cat-sticker.three { 
+  right: 12vw; 
+  bottom: 5vh; 
+  animation-delay: -2.8s; 
+  transform: scale(.65); 
+} 
+
+ 
+
+@keyframes float { 
+  0%, 100% { 
+    translate: 0 0; 
+    rotate: -8deg; 
+  } 
+  50% { 
+    translate: 0 -17px; 
+    rotate: 8deg; 
+  } 
+} 
+
+ 
+
+/* Рисуем котика с помощью CSS */ 
+
+ 
+
+.cat { 
+  position: relative; 
+  width: 58px; 
+  height: 48px; 
+  margin: 10px auto; 
+  background: white; 
+  border: 2px solid #28202a; 
+  border-radius: 48% 48% 43% 43%; 
+} 
+
+ 
+
+.cat:before, 
+.cat:after { 
+  content: ""; 
+  position: absolute; 
+  top: -9px; 
+  width: 19px; 
+  height: 22px; 
+  background: white; 
+  border: 2px solid #28202a; 
+  z-index: -1; 
+} 
+
+ 
+
+.cat:before { 
+  left: 1px; 
+  transform: rotate(-24deg); 
+  border-radius: 3px 13px 3px 4px; 
+} 
+
+
+ 
+
+.cat:after { 
+  right: 1px; 
+  transform: rotate(24deg); 
+  border-radius: 13px 3px 4px 3px; 
+} 
+
+ 
+
+.eye { 
+  position: absolute; 
+  top: 22px; 
+  width: 4px; 
+  height: 6px; 
+  background: #28202a; 
+  border-radius: 50%; 
+} 
+
+ 
+
+.eye.l { left: 15px; } 
+.eye.r { right: 15px; } 
+
+ 
+
+.nose { 
+  position: absolute; 
+  top: 29px; 
+  left: 27px; 
+  width: 5px; 
+  height: 4px; 
+  border-radius: 50%; 
+  background: #e88db4; 
+} 
+
+ 
+
+.whisk { 
+  position: absolute; 
+  top: 29px; 
+  width: 13px; 
+  border-top: 1px solid #28202a; 
+} 
+
+ 
+
+.whisk.l { 
+  left: -9px; 
+  transform: rotate(8deg); 
+} 
+
+ 
+
+.whisk.r { 
+  right: -9px; 
+  transform: rotate(-8deg); 
+} 
+
+ 
+
+.bow { 
+  position: absolute; 
+
+
+  right: -7px; 
+  top: -13px; 
+  width: 25px; 
+  height: 18px; 
+} 
+
+ 
+
+.bow:before, 
+.bow:after { 
+  content: ""; 
+  position: absolute; 
+  top: 1px; 
+  width: 13px; 
+  height: 13px; 
+  background: #ed6fa5; 
+  border: 1px solid #a82f65; 
+} 
+
+ 
+
+.bow:before { 
+  left: 0; 
+  transform: rotate(35deg); 
+  border-radius: 3px 8px 3px 8px; 
+} 
+
+ 
+
+.bow:after { 
+  right: 0; 
+  transform: rotate(-35deg); 
+  border-radius: 8px 3px 8px 3px; 
+} 
+
+ 
+
+.bow i { 
+  position: absolute; 
+  left: 10px; 
+  top: 6px; 
+  width: 6px; 
+  height: 6px; 
+  background: #bd3973; 
+  border-radius: 50%; 
+  z-index: 1; 
+} 
+
+ 
+
+/* Адаптация для телефона */ 
+
+ 
+
+@media(max-width:760px) { 
+  header { 
+    align-items: flex-start; 
+    flex-direction: column; 
+    padding: 13px 16px; 
+  } 
+
+
+ 
+
+  nav { 
+    width: 100%; 
+    justify-content: space-between; 
+    gap: 3px; 
+  } 
+
+ 
+
+  nav button { 
+    padding: 9px 10px; 
+    font-size: 13px; 
+  } 
+
+ 
+
+  main { 
+    padding-top: 35px; 
+  } 
+
+ 
+
+  .hero { 
+    grid-template-columns: 1fr; 
+    gap: 26px; 
+    text-align: center; 
+  } 
+
+ 
+
+  .hero .lead { 
+    margin: 0 auto; 
+  } 
+
+ 
+
+  .hero-photo { 
+    max-width: 310px; 
+  } 
+
+ 
+
+  .hero-photo img { 
+    height: 390px; 
+  } 
+
+ 
+
+  .gallery { 
+    grid-template-columns: repeat(2,minmax(0,1fr)); 
+    gap: 12px; 
+  } 
+
+ 
+
+  .work-card img { 
+    height: 210px; 
+  } 
+
+ 
+
+  .price-grid { 
+    grid-template-columns: 1fr; 
+  } 
+
+ 
+
+  .cat-sticker { 
+
+
+    width: 53px; 
+    height: 53px; 
+    opacity: .8; 
+  } 
+
+ 
+
+  .cat { 
+    transform: scale(.85); 
+    transform-origin: top left; 
+  } 
+} 
+
+ 
+
+@media(max-width:390px) { 
+  .work-card img { 
+    height: 170px; 
+  } 
+
+ 
+
+  .contact-card { 
+    align-items: flex-start; 
+    flex-direction: column; 
+  } 
+
+ 
+
+  .contact-label { 
+    text-align: left; 
+  } 
+} 
+
+ 
+
+@media(prefers-reduced-motion:reduce) { 
+  *, *:before, *:after { 
+    animation: none !important; 
+    scroll-behavior: auto !important; 
+    transition: none !important; 
+  } 
+} 
+</style> 
+</head> 
+
+ 
+
+<body> 
+
+ 
+
+<!-- ШАПКА --> 
+
+ 
+
+<header> 
+  <div class="brand">ALBINA <span>✿</span></div> 
+
+ 
+
+  <nav aria-label="Главная навигация"> 
+    <button class="active" data-page="about">Я</button> 
+    <button data-page="works">Мои работы</button> 
+    <button data-page="price">Стоимость</button> 
+    <button data-page="order">Заказать</button> 
+
+
+  </nav> 
+</header> 
+
+ 
+
+<!-- СТИКЕРЫ --> 
+
+ 
+
+<div class="cat-sticker one" aria-hidden="true"> 
+  <div class="cat"> 
+    <span class="eye l"></span> 
+    <span class="eye r"></span> 
+    <span class="nose"></span> 
+    <span class="whisk l"></span> 
+    <span class="whisk r"></span> 
+    <span class="bow"><i></i></span> 
+  </div> 
+</div> 
+
+ 
+
+<div class="cat-sticker two" aria-hidden="true"> 
+  <div class="cat"> 
+    <span class="eye l"></span> 
+    <span class="eye r"></span> 
+    <span class="nose"></span> 
+    <span class="whisk l"></span> 
+    <span class="whisk r"></span> 
+    <span class="bow"><i></i></span> 
+  </div> 
+</div> 
+
+ 
+
+<div class="cat-sticker three" aria-hidden="true"> 
+  <div class="cat"> 
+    <span class="eye l"></span> 
+    <span class="eye r"></span> 
+    <span class="nose"></span> 
+    <span class="whisk l"></span> 
+    <span class="whisk r"></span> 
+    <span class="bow"><i></i></span> 
+  </div> 
+</div> 
+
+ 
+
+<main> 
+
+ 
+
+<!-- СТРАНИЦА 1: Я --> 
+
+ 
+
+<section class="page active" id="about"> 
+
+ 
+
+  <div class="hero"> 
+
+ 
+
+    <div class="hero-copy"> 
+      <p class="eyebrow">Привет! Рада знакомству</p> 
+
+
+ 
+
+      <h1>Я — <em>Альбина</em></h1> 
+
+ 
+
+      <p class="lead"> 
+        Создаю стильные и запоминающиеся сайты, 
+        в которых красота сочетается с удобством. 
+      </p> 
+
+ 
+
+      <div class="signature"> 
+        Вэб-дизайнер Альбина 
+      </div> 
+    </div> 
+
+ 
+
+    <div class="hero-photo"> 
+      <img src="images/albina.jpg" alt="Портрет Альбины"> 
+    </div> 
+
+ 
+
+  </div> 
+
+ 
+
+</section> 
+
+ 
+
+<!-- СТРАНИЦА 2: МОИ РАБОТЫ --> 
+
+ 
+
+<section class="page" id="works"> 
+
+ 
+
+  <div class="section-head"> 
+
+ 
+
+    <p class="eyebrow">Портфолио</p> 
+
+ 
+
+    <h2>Мои работы</h2> 
+
+ 
+
+    <p class="lead"> 
+      Примеры дизайна сайтов — от уютных персональных 
+      страниц до выразительных сайтов для бизнеса. 
+    </p> 
+
+ 
+
+  </div> 
+
+ 
+
+  <h3 class="group-title">Сайт-визитка</h3> 
+
+ 
+
+  <div class="gallery"> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina1.jpg" alt="Сайт-визитка 1"> 
+      <div class="work-caption">сайт-визитка</div> 
+    </article> 
+
+ 
+
+    <article class="work-card"> 
+
+
+      <img src="images/albina2.jpg" alt="Сайт-визитка 2"> 
+      <div class="work-caption">сайт-визитка</div> 
+    </article> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina3.jpg" alt="Сайт-визитка 3"> 
+      <div class="work-caption">сайт-визитка</div> 
+    </article> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina4.jpg" alt="Сайт-визитка 4"> 
+      <div class="work-caption">сайт-визитка</div> 
+    </article> 
+
+
+
+     <article class="work-card"> 
+       <img src="images/albina5.jpg" alt="Сайт-визитка 5"> 
+       <div class="work-caption">сайт-визитка</div> 
+     </article> 
+     
+
+
+     <article class="work-card"> 
+       <img src="images/albina6.jpg" alt="Сайт-визитка 6"> 
+       <div class="work-caption">сайт-визитка</div> 
+     </article> 
+ 
+
+
+     <article class="work-card"> 
+       <img src="images/albina7.jpg" alt="Сайт-визитка 7"> 
+       <div class="work-caption">сайт-визитка</div> 
+     </article> 
+
+
+
+     <article class="work-card"> 
+       <img src="images/albina8.jpg" alt="Сайт-визитка 8"> 
+       <div class="work-caption">сайт-визитка</div> 
+     </article> 
+
+
+  </div> 
+
+ 
+
+  <h3 class="group-title">Корпоративный сайт</h3> 
+
+ 
+
+  <div class="gallery"> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina9.jpg" alt="Корпоративный сайт 1"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina10.jpg" alt="Корпоративный сайт 2"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina11.jpg" alt="Корпоративный сайт 3"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+ 
+
+    <article class="work-card"> 
+      <img src="images/albina12.jpg" alt="Корпоративный сайт 4"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina13.jpg" alt="Корпоративный сайт 5"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+ 
+
+
+    <article class="work-card"> 
+      <img src="images/albina14.jpg" alt="Корпоративный сайт 6"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina15.jpg" alt="Корпоративный сайт 7"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina16.jpg" alt="Корпоративный сайт 8"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina17.jpg" alt="Корпоративный сайт 9"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+    
+
+    <article class="work-card"> 
+      <img src="images/albina18.jpg" alt="Корпоративный сайт 10"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina19.jpg" alt="Корпоративный сайт 11"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina20.jpg" alt="Корпоративный сайт 12"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+    <article class="work-card"> 
+      <img src="images/albina21.jpg" alt="Корпоративный сайт 13"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+    
+
+    <article class="work-card"> 
+      <img src="images/albina22.jpg" alt="Корпоративный сайт 14"> 
+      <div class="work-caption">корпоративный сайт</div> 
+    </article> 
+
+
+
+  </div> 
+
+ 
+
+</section> 
+
+ 
+
+<!-- СТРАНИЦА 3: СТОИМОСТЬ --> 
+
+ 
+
+<section class="page" id="price"> 
+
+ 
+
+
+  <div class="section-head"> 
+
+ 
+
+    <p class="eyebrow">Прайс-лист</p> 
+
+ 
+
+    <h2>Стоимость</h2> 
+
+ 
+
+    <p class="lead"> 
+      Выбери формат сайта — обсудим детали 
+      и подберём решение под твою задачу. 
+    </p> 
+
+ 
+
+  </div> 
+
+ 
+
+  <div class="price-grid"> 
+
+ 
+
+    <article class="note"> 
+
+ 
+
+      <h3>Сайт-визитка</h3> 
+
+ 
+
+      <p> 
+        <strong>Локальный сайт</strong> — от 5 000 ₽ 
+      </p> 
+
+ 
+
+      <p> 
+        <strong>Под ключ</strong> — от 7 000 ₽ 
+      </p> 
+
+ 
+
+    </article> 
+
+ 
+
+    <article class="note"> 
+
+ 
+
+      <h3>Корпоративный сайт</h3> 
+
+ 
+
+      <p> 
+        <strong>Локальный сайт</strong> — от 15 000 ₽ 
+      </p> 
+
+ 
+
+      <p> 
+        <strong>Под ключ</strong> — от 20 000 ₽ 
+      </p> 
+
+ 
+
+    </article> 
+
+ 
+
+  </div> 
+
+ 
+
+</section> 
+
+ 
+
+<!-- СТРАНИЦА 4: ЗАКАЗАТЬ --> 
+
+
+ 
+
+<section class="page" id="order"> 
+
+ 
+
+  <div class="section-head"> 
+
+ 
+
+    <p class="eyebrow"> 
+      Давай создадим что-то красивое 
+    </p> 
+
+ 
+
+    <h2>Заказать</h2> 
+
+ 
+
+    <p class="lead"> 
+      Есть идея для сайта? Свяжись со мной удобным 
+      способом — обсудим проект и его детали. 
+    </p> 
+
+ 
+
+  </div> 
+
+ 
+
+  <div class="contact-wrap"> 
+
+ 
+
+    <div class="contact-card"> 
+
+ 
+
+      <div class="contact-label"> 
+        Телефон 
+      </div> 
+
+ 
+
+      <div class="contact-value"> 
+        <a href="tel:+79889433959"> 
+          +7 988 943-39-59 
+        </a> 
+      </div> 
+
+ 
+
+    </div> 
+
+ 
+
+    <div class="contact-card"> 
+
+ 
+
+      <div class="contact-label"> 
+        Электронная почта 
+      </div> 
+
+ 
+
+      <div class="contact-value"> 
+        <a href="mailto:alikaalyaa408@gmail.com"> 
+          alikaalyaa408@gmail.com 
+        </a> 
+      </div> 
+
+ 
+
+    </div> 
+
+ 
+
+
+    <p class="copy-hint"> 
+      Нажми на номер, чтобы позвонить, 
+      или на почту, чтобы написать письмо. 
+    </p> 
+
+ 
+
+  </div> 
+
+ 
+
+</section> 
+
+ 
+
+</main> 
+
+ 
+
+<!-- ПОДВАЛ --> 
+
+ 
+
+<footer> 
+  Сделано с любовью ♡ · Вэб-дизайнер Альбина 
+</footer> 
+
+ 
+
+<!-- ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ --> 
+
+ 
+
+<script> 
+
+ 
+
+const buttons = [ 
+  ...document.querySelectorAll('nav button') 
+]; 
+
+ 
+
+const pages = [ 
+  ...document.querySelectorAll('.page') 
+]; 
+
+ 
+
+function showPage(id) { 
+
+ 
+
+  pages.forEach(page => { 
+    page.classList.toggle( 
+      'active', 
+      page.id === id 
+    ); 
+  }); 
+
+ 
+
+  buttons.forEach(button => { 
+    button.classList.toggle( 
+      'active', 
+      button.dataset.page === id 
+    ); 
+  }); 
+
+ 
+
+  window.scrollTo({ 
+    top: 0, 
+    behavior: 'smooth' 
+
+
+  }); 
+
+ 
+
+} 
+
+ 
+
+buttons.forEach(button => { 
+
+ 
+
+  button.addEventListener('click', () => { 
+    showPage(button.dataset.page); 
+  }); 
+
+ 
+
+}); 
+
+ 
+
+</script> 
+
+ 
+
+</body> 
+</html> 
+
+ 
